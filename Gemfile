@@ -34,7 +34,11 @@ gem 'devise'
 gem 'gravatar_image_tag'
 gem 'carrierwave'
 gem 'mini_magick'
-
+gem 'cloudinary', '~> 1.9.1'
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
+gem 'bootstrap'
+gem 'jquery-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

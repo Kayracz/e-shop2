@@ -1,0 +1,106 @@
+
+<% content_for :header do %>
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Browse the latest products on Rv10
+      </h1>
+    </div>
+  </div>
+</section>
+<% end %>
+
+<!-- //other cards  -->
+<!-- <div class="instrument-index-grid pt4">
+  <% @products.each do |product| %>
+
+    <div class="instrument border-light" style="width:100%; height:100%;">
+      <div class="instrument-thumb" style="
+    height: auto;
+    max-width: 244px;
+">
+
+
+<div class="instrument border-light">
+      <div class="instrument-thumb">
+   <a href="#"><%= cl_image_tag product.photo%></a>
+      <% if product.price? %>
+        <div class="condition">
+          <span class="tag is-dark">Bs. <%= product.price %></span>
+        </div>
+      <% end %>
+      </div>
+
+
+    <div class="pa3">
+
+      <h3 class="fw7 f4 title"><%= link_to product.name, product %></h3>
+
+      <p class="has-text-gray fg pt1"><%= product.description %></p>
+
+      <p class="has-text-gray fg pt1"><%= product.size %></p>
+      <p class="has-text-gray fg pt1"><%= product.color %></p>
+      <p class="has-text-gray fg pt1"><%= product.category %></p>
+
+       </div>
+  </div>
+  <% end %>
+</div>
+
+ -->
+<div class="container">
+    <h3 class="h3">All products </h3>
+    <div class="row">
+  <% @products.each do |product| %>
+        <div class="col-md-3">
+            <div class="product-grid2">
+                <div class="product-image2">
+                    <a href="#"><%= cl_image_tag product.photo %></a>
+                    <ul class="social">
+                        <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                        <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
+                    <a class="add-to-cart" href="">Add to cart</a>
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="#"><%= link_to product.name, product_path(product) %></a></h3>
+                    <span class="price"><%= product.price %></span>
+                </div>
+            </div>
+        </div>
+   <% end %>
+
+        <!-- card two-->
+        <div class="col-md-3">
+            <div class="product-grid2">
+              <div class="product-image2">
+                  <a href="#">
+                      <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo3/images/img-3.jpeg">
+                      <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo3/images/img-4.jpeg">
+                  </a>
+                  <ul class="social">
+                      <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                      <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                      <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                  </ul>
+                  <a class="add-to-cart" href="">Add to cart</a>
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="#">Women's Yellow Top</a></h3>
+                    <span class="price">$699.99</span>
+                </div>
+            </div>
+        </div>
+
+
+<!--     </div> -->
+</div>
+</div>
+<hr>
+
+
+
+
+</div>

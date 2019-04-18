@@ -1,0 +1,127 @@
+<div class="columns">
+  <div class="column is-8 is-centered">
+
+    <%= simple_form_for @product, html: { multipart: true } do |f| %>
+      <%= f.error_notification %>
+
+        <div class="columns">
+
+          <div class="field column is-9">
+            <div class="control">
+              <%= f.input :name , required: true, input_html: { class: "input"}, wrapper: false, label_html: { class:"label" } %>
+            </div>
+          </div>
+
+          <div class="field column">
+            <div class="control">
+              <%= f.input :price, required: true, input_html: { class:"input", maxlength: 7  }, wrapper: false, label_html: { class:"label" } %>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <%= f.input :quantity, required: true, input_html: { class:"input" }, wrapper: false, label_html: { class:"label" } %>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <%= f.input :description, required: true, input_html: { class:"textarea" }, wrapper: false, label_html: { class:"label" } %>
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="field column is-4">
+            <div class="control">
+              <label class="label">Color</label>
+              <div class="control has-icons-left">
+                <span class="select">
+                  <%= f.input_field :color, collection: Product::COLOR, prompt: "Select color" %>
+                </span>
+                <span class="icon is-small is-left">
+                  <i class="fa fa-paint-brush"></i>
+                </span>
+              </div>
+            </div>
+           </div>
+
+
+          <div class="field column is-4">
+            <div class="control">
+              <label class="label">Size</label>
+              <div class="control has-icons-left">
+                <span class="select">
+                  <%= f.input_field :size, collection: Product::SIZE, prompt: "Select size" %>
+                </span>
+                <span class="icon is-small is-left">
+                  <i class="fa fa-tag"></i>
+                </span>
+              </div>
+            </div>
+           </div>
+
+          <div class="field column is-4">
+            <div class="control">
+              <label class="label">Gender</label>
+              <div class="control has-icons-left">
+                <span class="select">
+                  <%= f.input_field :gender, collection: Product::GENDER, prompt: "Select gender" %>
+                </span>
+                <span class="icon is-small is-left">
+                  <i class="fa fa-venus-mars"></i>
+                </span>
+              </div>
+            </div>
+           </div>
+         </div>
+
+
+            <div class="control">
+              <label class="label">Category</label>
+              <div class="control has-icons-left">
+                <span class="select">
+                  <%= f.input_field :category, collection: Product::CATEGORY, prompt: "Select Category" %>
+                </span>
+                <span class="icon is-small is-left">
+                  <i class="fa fa-paint-brush"></i>
+                </span>
+              </div>
+            </div>
+           </div>
+         </div>
+
+
+
+        <div class="field">
+          <div class="control">
+            <label class="label">Add images</label>
+              <div class="file">
+              <label class="file-label">
+                 <%= f.input :photo, as: :file, input_html: { class:"file-input product-image" }, label: false, wrapper: false %>
+
+
+                  <span class="file-cta">
+                    <span class="file-icon"><i class="fa fa-upload"></i></span>
+                    <span class="file-label">Choose a file…</span>
+                  </span>
+              </label>
+              </div>
+            </div>
+          </div>
+          <output id="list"></output>
+        <hr />
+
+
+
+        <div class="field is-grouped">
+          <div class="control">
+            <%= f.button :submit, class: 'button is-white' %>
+            <%= link_to 'Cancel', products_path, class:'button is-light' %>
+          </div>
+        </div>
+
+      <% end %>
+  </div>
+</div>
